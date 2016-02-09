@@ -1,0 +1,15 @@
+Package: lsmnsd
+Title: Classify movement strategies using latent-state model and NSD
+Version: 0.0.0.9000
+Authors@R: person("Guillaume", "Bastille-Rousseau", email = "gbastill@esf.edu", role = c("aut", "cre"))
+Description: This package provides a series of functions to analyse animal movement strategies using a latent-state model and net squared displacement. 
+    References: Bastille-Rousseau, G., Potts, J., Yackulic, C., Frair, J., Ellington, E.H., Blake, S. (In review) Characterizing movement strategies of 
+    Galapagos giant tortoises using a Bayesian mixture distribution model and net squared displacement. Movement Ecology
+Depends:
+    R (>= 3.2.3)
+License: GPL (>=3)
+LazyData: true
+RoxygenNote: 5.0.1
+Imports:
+    R2jags
+ 
