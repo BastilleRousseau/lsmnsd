@@ -4,7 +4,7 @@
 
 This is the development area for the package `lsmnsd`, which provides a series of functions to analyze and classify animal movement strategies based on analysis of Net Squared Displacement (NSD) and latent-state model. 
 
-*References: Bastille-Rousseau, G., Potts, J., Yackulic, C., Frair, J., Ellington, E.H., Blake, S. (In review) Characterizing movement strategies of Galapagos giant tortoises using a Bayesian mixture distribution model and net squared displacement. Movement Ecology.* 
+*References*: Bastille-Rousseau, G., Potts, J., Yackulic, C., Frair, J., Ellington, E.H., Blake, S. (In review) Characterizing movement strategies of Galapagos giant tortoises using a Bayesian mixture distribution model and net squared displacement. Movement Ecology. 
 
 ## Installation of the development version  ##
 
