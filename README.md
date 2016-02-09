@@ -1,6 +1,6 @@
 ## lsmnsd  ##
 
-**lsmnsd** is a R package that analyze animal movement using latent-state model and net squared displacement.
+**lsmnsd** is an R package that analyzes animal movement using latent-state model and net squared displacement.
 
 This is the development area for the package `lsmnsd`, which provides a series of functions to analyze and classify animal movement strategies based on analysis of Net Squared Displacement (NSD) and latent-state model. 
 
