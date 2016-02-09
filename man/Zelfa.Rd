@@ -9,7 +9,7 @@
 Zelfa
 }
 \description{
-A dataset containing the x, y locations (UTM), and time of Zelfa, a female giant tortoises inhabiting Espanola Island, Galapagos.
+A dataset containing the x, y locations (UTM), and time of Zelfa, a female giant tortoise inhabiting Espanola Island, Galapagos.
 }
 \keyword{datasets}
 

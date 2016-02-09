@@ -73,7 +73,7 @@ waic <- function (jagsfit){
 
 #' Posterior variances 
 #'
-#' Function to calculate posterior variances from simulation. Based on script initially written by Andrew Gelman
+#' This function calculates posterior variances from simulation. Based on script initially written by Andrew Gelman
 #' @param a A matrix
 #' @keywords waic
 #' @export

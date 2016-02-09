@@ -7,7 +7,7 @@
 #' @keywords rerun
 #' @export
 #' @examples
-#' # DO NOT RUN - TAKE A LONG TIME
+#' # DO NOT RUN - TAKES A LONG TIME
 #' #data(Christian_rjags)
 #' #rerun(Christian_rjags, n.update=2, inc.fact=1)
 rerun<-function(rjags, n.update=3, inc.fact=1) {
@@ -19,7 +19,7 @@ rerun<-function(rjags, n.update=3, inc.fact=1) {
 
 #' Diagnostics plots 
 #'
-#' This function used the traceplot to display a plot of iterations vs. sampled values for each variable in the chain, with a separate plot per variable.
+#' This function uses the traceplot to display a plot of iterations vs. sampled values for each variable in the chain with a separate plot per variable.
 #' @param out Output from clustNSD
 #' @keywords t.plot traceplot
 #' @export

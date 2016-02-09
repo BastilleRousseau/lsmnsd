@@ -10,7 +10,7 @@
 \item{out}{Output from clustNSD}
 }
 \description{
-This function used the traceplot to display a plot of iterations vs. sampled values for each variable in the chain, with a separate plot per variable.
+This function uses the traceplot to display a plot of iterations vs. sampled values for each variable in the chain with a separate plot per variable.
 }
 \examples{
 data(Christian_rjags)

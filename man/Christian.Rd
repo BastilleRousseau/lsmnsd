@@ -9,7 +9,7 @@
 Christian
 }
 \description{
-A dataset containing the x, y locations (UTM), and time of Christian, a male giant tortoises inhabiting Alcedo volcano on Isabela Island, Galapagos.
+A dataset containing the x, y locations (UTM), and time of Christian, a male giant tortoise inhabiting Alcedo volcano on Isabela Island, Galapagos.
 }
 \keyword{datasets}
 

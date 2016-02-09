@@ -4,7 +4,7 @@
 \name{lsmnsd}
 \alias{lsmnsd}
 \alias{lsmnsd-package}
-\title{lsmnsd: A package for classifying animal movement strategies based on latent-space model and net squared displacement.}
+\title{lsmnsd: A package for classifying animal movement strategies based on a latent-space model and net squared displacement.}
 \description{
 The lsmnsd package provides four categories of important functions:
 clustNSD, simple.clust, classify, bootNSD.

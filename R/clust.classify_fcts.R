@@ -62,7 +62,7 @@ print(object[[6]][1], digits=3)
 
 #' Switching probabilties matrix
 #'
-#' Extrac matrix of switching probabilities
+#' Extract matrix of switching probabilities
 #' @param object an object of class "mov.clust" or "rjags"
 #' @keywords classify clust.classify
 #' @export
@@ -92,9 +92,9 @@ min.f1f2 <- function(x, mu1, mu2, sd1, sd2) {
 
 
 
-#' Calculating transitions between clusters
+#' Calculating transitions among clusters
 #'
-#' Calculating pattern of transitions among cluster
+#' Calculating pattern of transitions among clusters
 #' @param object an object of class "mov.clust" or "rjags"
 #' @keywords classify clust.classify
 #' @export

@@ -10,7 +10,7 @@ colVars(a)
 \item{a}{A matrix}
 }
 \description{
-Function to calculate posterior variances from simulation. Based on script initially written by Andrew Gelman
+This function calculates posterior variances from simulation. Based on script initially written by Andrew Gelman
 }
 \examples{
 mat<-matrix(rnorm(20), nrow=10, ncol=2)

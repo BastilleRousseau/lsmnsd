@@ -1,6 +1,6 @@
 #' Convert to mov.clust class
 #'
-#' This function simplifies a rjags output from clustNSD to a mov.clust object
+#' This function simplifies an rjags output from clustNSD to a mov.clust object
 #' @param out Output of clustNSD function
 #' @keywords mov.clust simple.clust
 #' @export

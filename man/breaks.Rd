@@ -2,7 +2,7 @@
 % Please edit documentation in R/clust.classify_fcts.R
 \name{breaks}
 \alias{breaks}
-\title{Calculating transitions between clusters}
+\title{Calculating transitions among clusters}
 \usage{
 breaks(object)
 }
@@ -10,7 +10,7 @@ breaks(object)
 \item{object}{an object of class "mov.clust" or "rjags"}
 }
 \description{
-Calculating pattern of transitions among cluster
+Calculating pattern of transitions among clusters
 }
 \examples{
 data(Zelfa_rjags)

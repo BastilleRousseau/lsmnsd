@@ -17,7 +17,7 @@ rerun(rjags, n.update = 3, inc.fact = 1)
 This function uses the autojags function to rerun the function clustNSD to facilitate convergence
 }
 \examples{
-# DO NOT RUN - TAKE A LONG TIME
+# DO NOT RUN - TAKES A LONG TIME
 #data(Christian_rjags)
 #rerun(Christian_rjags, n.update=2, inc.fact=1)
 }

@@ -10,7 +10,7 @@ switch.matrix(object)
 \item{object}{an object of class "mov.clust" or "rjags"}
 }
 \description{
-Extrac matrix of switching probabilities
+Extract matrix of switching probabilities
 }
 \examples{
 data(Zelfa_rjags)

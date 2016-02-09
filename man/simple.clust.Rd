@@ -13,7 +13,7 @@ simple.clust(out)
 A mov.clust object
 }
 \description{
-This function simplifies a rjags output from clustNSD to a mov.clust object
+This function simplifies an rjags output from clustNSD to a mov.clust object
 }
 \examples{
 data(Christian_rjags)
