@@ -6,7 +6,7 @@ This is the development area for the package `lsmnsd`, which provides a series o
 
 *References*: Bastille-Rousseau, G., Potts, J., Yackulic, C., Frair, J., Ellington, E.H., Blake, S. (2016) Flexible characterization of animal movement pattern using net squared displacement and a latent state model. Movement Ecology. 
 
-For questions: gbastill |at| esf.edu
+For questions: gbr |at| colostate.edu
 
 ## Installation of the development version  ##
 
