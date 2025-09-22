@@ -1,18 +1,18 @@
-#' Classify movement strategies 
+#' Classify movement strategies
 #'
 #' Extract information to classify movement strategies
 #' @param object an object of class "mov.clust" or "rjags"
-#' @param grph Produce a graph of classification (Default = F) 
+#' @param grph Produce a graph of classification (Default = F)
 #' @keywords classify clust.classify mov.clust
 #' @export
 #' @return A clust.classify object
 #' @examples
 #' data(Christian_rjags)
-#' summary(classify(Christian_rjags))	
+#' summary(classify(Christian_rjags))
 #' data(Zelfa_rjags)
 #' summary(classify(Zelfa_rjags))
 classify<-function(object, grph=F,...){
-	if(class(object)=="rjags") {object<-simple.clust(object)}	
+	if(class(object)=="rjags") {object<-simple.clust(object)}
 	mat<-cbind(	1:nrow(object$NSD), object$NSD, object$idx[object$NSD[,2]])
 	mean<-tapply(mat[,2], mat[,3],mean)
 	sd<-tapply(mat[,2], mat[,3],sd)
@@ -24,15 +24,15 @@ classify<-function(object, grph=F,...){
 	switch<-switch.matrix(object)
 	Strategy<- ifelse(switch[[1]][2,2]<0.90 & switch[[1]][3,3]<0.90, "Resident",
 				ifelse(switch[[1]][1,1]>0.95 & switch[[1]][2,2]>0.95 & switch[[1]][3,3]>0.85, "Migration",
-				ifelse(switch[[1]][1,1]>0.95 & switch[[1]][2,2]>0.90 & switch[[1]][3,3]<0.85, "Nomadism- recommend visual inspection", "Inspection required"))) 
-	Strategy<-ifelse(as.numeric(brk[2])==0 & Strategy=="Migration", "Dispersal", Strategy)				
+				ifelse(switch[[1]][1,1]>0.95 & switch[[1]][2,2]>0.90 & switch[[1]][3,3]<0.85, "Nomadism- recommend visual inspection", "Inspection required")))
+	Strategy<-ifelse(as.numeric(brk[2])==0 & Strategy=="Migration", "Dispersal", Strategy)
 	out<-list(predict, TS, brk, overlap, switch, Strategy)
 	names(out)<-c("Parameters", "Time spent", "Transitions", "Weitzman's overlap", "Switching probabilities", "Movement strategy")
 	class(out)<-"clust.classify"
 	if (grph==T) {plot(object)}
 	return(out)
 	}
-	
+
 
 #' Summarizing clust.classify object
 #'
@@ -42,14 +42,14 @@ classify<-function(object, grph=F,...){
 #' @export
 #' @examples
 #' data(Christian_rjags)
-#' summary(classify(Christian_rjags))	
+#' summary(classify(Christian_rjags))
 summary.clust.classify <- function(object) {
 cat("Summary information for clustering applied to NSD time-series", "\n", "\n", "Estimates of mean and standard deviation for each cluster", "\n")
 print(object[[1]], digits=3)
 cat("\n", "Overlap between the two normal distributions:")
 print(object[[4]], digits=3)
 cat("\n", "Total time spent in each cluster (3 is associated to the uniform distribution):")
-print(object[[2]][[1]], digits=0)
+print(object[[2]][[1]], digits=3)
 cat("\n", "Average time spent in each cluster (3 is associated to the uniform distribution):", "\n")
 print(object[[2]][[2]], digits=3)
 cat("\n", "Number of transition from first to second cluster: ", object[[3]][[1]],  "\n", "Number of transition from second to first cluster: ", object[[3]][[2]], "\n","Number of departure from first cluster: ", object[[3]][[3]], "\n")
@@ -57,8 +57,8 @@ cat("\n", "Matrix of switching probability:", "\n")
 print(object[[5]][[1]], digits=3)
 cat("\n", "Movement strategy:", "\n")
 print(object[[6]][1], digits=3)
-}	
-	
+}
+
 
 #' Switching probabilties matrix
 #'
@@ -68,15 +68,15 @@ print(object[[6]][1], digits=3)
 #' @export
 #' @examples
 #' data(Zelfa_rjags)
-#' switch.matrix(Zelfa_rjags)	
+#' switch.matrix(Zelfa_rjags)
 switch.matrix<-function(object){
-tt<-object$Results[c("trans.mat[1,1]","trans.mat[1,2]","trans.mat[1,3]","trans.mat[2,1]","trans.mat[2,2]","trans.mat[2,3]","trans.mat[3,1]","trans.mat[3,2]","trans.mat[3,3]"), 1:2]	
+tt<-object$Results[c("trans.mat[1,1]","trans.mat[1,2]","trans.mat[1,3]","trans.mat[2,1]","trans.mat[2,2]","trans.mat[2,3]","trans.mat[3,1]","trans.mat[3,2]","trans.mat[3,3]"), 1:2]
 mat<-matrix(tt[,1], 3,3, byrow=T)
 rownames(mat)<-c("From N1", "From N2", "From Uni")
-colnames(mat)<-c("To N1", "To N2", "To Uni") 
+colnames(mat)<-c("To N1", "To N2", "To Uni")
 mat2<-matrix(tt[,2], 3,3, byrow=T)
 rownames(mat2)<-c("From N1", "From N2", "From Uni")
-colnames(mat2)<-c("To N1", "To N2", "To Uni") 
+colnames(mat2)<-c("To N1", "To N2", "To Uni")
 out<-list(mat, mat2); names(out)<-c("Mean", "SD")
 return(out)
 }
@@ -100,9 +100,9 @@ min.f1f2 <- function(x, mu1, mu2, sd1, sd2) {
 #' @export
 #' @examples
 #' data(Zelfa_rjags)
-#' breaks(Zelfa_rjags)		
+#' breaks(Zelfa_rjags)
 breaks<-function(object) {
-	if(class(object)=="rjags") {object<-simple.clust(object)}	
+	if(class(object)=="rjags") {object<-simple.clust(object)}
 	if (object$n.clust==1) {print("WARNING: Function is designed for two clusters")}
 	AB<-sum(diff(object$idx[object$idx!=3])==1)
 	BA<-sum(diff(object$idx[object$idx!=3])==-1)
@@ -112,7 +112,7 @@ breaks<-function(object) {
 	names(bb)<-c("Nb_1st_2nd", "Nb_2nd_1st", "Nb_departure_1st")
 	return(bb)
 }
-	
+
 
 #' Calculating time-spent in cluster
 #'
@@ -123,8 +123,8 @@ breaks<-function(object) {
 #' @examples
 #' data(Zelfa_rjags)
 #' time.spent(Zelfa_rjags)
-time.spent<-function(object){	
-	if(class(object)=="rjags") {object<-simple.clust(object)}	
+time.spent<-function(object){
+	if(class(object)=="rjags") {object<-simple.clust(object)}
 	if (object$n.clust==1) {print("WARNING: Function is designed for two clusters")}
 	TS_total<-table(object$idx)
 	last<-tail(object$idx,1)
@@ -144,7 +144,7 @@ time.spent<-function(object){
 	names(Average)<-1:3
 	out<-list(TS_total, Average, TS1, TS2, TS3)
 	names(out)<-c("Total_time", "Average", "Time_in_1", "Time_in_2","Time_in_3")
-	return(out) 
+	return(out)
 }
 
 
